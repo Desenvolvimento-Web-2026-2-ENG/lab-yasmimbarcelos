@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content ="Abrir chamado técnico"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte Técnico</title>
+</head>
+<body>
+ 
+    <main id="corpo-da-pagina">
+        
+        <form action="https://httpbin.org/post" method="POST" enctype="multipart/form-data">
+            <fieldset> 
+                <legend>Abrir Chamado Técnico</legend>
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" required minlength="3"><br><br>
+
+            <label for="email">Email de contato:</label>
+            <input type="email" id="email" name="email" required minlength="10"><br><br>
+
+             <label for="prioridade">Prioridades:</label>
+            <select id = "prioridade" name="prioridade" required>
+                <option value="Selecione uma opção">Selecione uma opção</option>
+                <option value="Baixa">Baixa</option>
+                <option value="Média">Média</option>
+                <option value="Alta">Alta</option>
+            </select>
+             <br>
+            <label for="Arquivo">Arquivo de Log ou Print (PNG/PDF):</label>
+            <input type="file" id="anexo" name="anexo" accept="image/png,application/pdf" aria-describedby="arquivo-ajuda">
+            <br>
+            <small id="arquivo-ajuda">Formatos permitidos: apenas PNG ou PDF.</small><br><br>
+           
+            <input type="submit" value="Enviar Chamado ">
+            </fieldset>
+        </form>
+    </main>
+
+</body>

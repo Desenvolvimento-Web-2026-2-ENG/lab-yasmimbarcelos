@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Horária de Aulas do Módulo</title>
+</head>
+<body>
+    <header id="cabecalho"></header>
+
+    <!-- MÓDULO 5: HORÁRIOS DAS AULAS -->
+    <div class="bloco-cronograma">
+        <h2 class="titulo-seccao">Horários acadêmicos</h2>
+
+        <table>
+            <!-- Título de Tabela Acessível -->
+            <caption>Grade de horários e disciplinas do módulo</caption>
+
+            <!-- Grupo de Cabeçalho da Tabela -->
+            <thead>
+                <tr>
+                    <th scope="col">Aula</th>
+                    <th scope="col">Horário</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Estruturação Multimídia</td>
+                    <td>19:00 - 20:30</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Recursos necessários:</p>
+        <!-- Estruturação de Listas -->
+        <ul>
+            <li>Computador com IDE configurada</li>
+            <li>Arquivos de legenda (.vtt) prontos</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <!-- MÓDULO 6: CONTEÚDO INTEGRADO -->
+    <div class="bloco-video">
+        <h2>Apresentação da Disciplina</h2>
+        <!-- Controles de Vídeo Nativo + Legenda de Áudio (kind="captions") -->
+        <video controls>
+            <source src="apresentacao.mp4" type="video/mp4">
+            <track src="legendas-audio.vtt" kind="captions" srclang="pt-BR" label="Português (Legendas de áudio)" default>
+            Seu navegador não suporta reprodução de vídeo.
+        </video>
+    </div>
+
+    <div class="bloco-mapa">
+        <h2>Localização do Campus IFF</h2>
+        <!-- Sandbox de Iframe (Segurança) + Rótulo de Iframe (A11y) -->
+        <iframe
+            src="https://mapas.iff.edu.br"
+            title="Mapa de localização do Campus IFF"
+            sandbox="allow-scripts allow-same-origin">
+        </iframe>
+    </div>
+
+</body>
+</html>

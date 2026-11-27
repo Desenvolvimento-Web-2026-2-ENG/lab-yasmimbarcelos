@@ -1,0 +1,244 @@
+/* ETAPA 1: Variáveis, Herança e Seletores */
+
+:root {
+    --cor-primaria: #7c3aed;      /* Lilás vibrante (botões, links ativos e destaques) */
+    --cor-secundaria: #38bdf8;    /* Azul bebê vivo (detalhes e bordas ativas) */
+    --cor-fundo: #f4f7fb;         /* Azul bebê bem clarinho / gelo para o fundo geral */
+    --cor-superficie: #ffffff;    /* Branco puro para os cards e menu */
+    --cor-texto: #2e1065;         /* Roxo/Lilás escuro para leitura confortável */
+    --cor-texto-suave: #64748b;   /* Cinza azulado para subtítulos e detalhes */
+    --cor-borda: #e2e8f0;         /* Borda discreta */
+    --cor-hover-azul: #e0f2fe;    /* Azul bebê suave para efeito hover */
+    --cor-pastel-lilas: #ede9fe;  /* Lilás pastel para rodapé e degradês */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    margin: 0;
+
+    /* Layout principal com Grid */
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "header header"
+        "nav main";
+}
+
+/* Tipografia dos títulos */
+
+h1, h2, h3 {
+    font-family: "Black Ops One", system-ui;
+    letter-spacing: 0.5px;
+}
+
+/* Oculta as linhas horizontais */
+
+hr {
+    display: none;
+}
+
+
+/* ETAPA 2: Organização das áreas do Grid */
+
+.cabecalho {
+    grid-area: header;
+    background: linear-gradient(135deg, var(--cor-pastel-lilas) 0%, var(--cor-hover-azul) 100%);
+    color: var(--cor-texto);
+    padding: 1.25rem 1.75rem;
+    border-bottom: 2px solid #ddd6fe;
+}
+
+.menu {
+    grid-area: nav;
+    background-color: var(--cor-superficie);
+    padding: 1.5rem;
+    border-right: 1px solid var(--cor-borda);
+}
+
+.conteudo {
+    grid-area: main;
+    padding: 2rem;
+    max-width: 1100px; /* Evita que o texto estique demais em telas ultrawide */
+    width: 100%;
+}
+
+
+/* ETAPA 3: Ajustes do cabeçalho */
+
+.cabecalho h1 {
+    margin: 0 0 0.25rem 0;
+}
+
+.cabecalho p {
+    margin: 0;
+    color: var(--cor-texto-suave);
+}
+
+
+/* ETAPA 4: Menu e links */
+
+.menu a {
+    display: block;
+    padding: 0.45rem 0.75rem;
+    border-radius: 6px;
+    color: var(--cor-texto);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.menu a:hover {
+    background-color: var(--cor-hover-azul);
+    color: var(--cor-primaria);
+    transform: translateX(4px);
+}
+
+/* Destaque do item Início (funciona tanto se a classe estiver no <li> quanto no <a>) */
+
+.inicio,
+.inicio a,
+a.inicio {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.inicio a:hover,
+a.inicio:hover {
+    background-color: #6d28d9;
+    color: #ffffff;
+    transform: none;
+}
+
+
+/* ETAPA 5: Listas aninhadas */
+
+.menu ul,
+.menu ol {
+    padding-left: 1.25rem;
+}
+
+.menu li {
+    margin-bottom: 0.4rem;
+}
+
+/* Registros de sala de aula */
+
+.registros {
+    list-style-type: circle;
+}
+
+/* Laboratórios */
+
+.laboratorios {
+    list-style-type: square;
+}
+
+/* Espaçamento dos títulos dos módulos */
+
+.menu h3,
+.menu ol h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--cor-primaria);
+}
+
+
+/* ETAPA 6: Conteúdo principal e cards */
+
+.card {
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 4px 12px rgba(46, 16, 101, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(46, 16, 101, 0.09);
+}
+
+.conteudo h2 {
+    border-bottom: 2px solid var(--cor-pastel-lilas);
+    padding-bottom: 0.75rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+
+/* ETAPA 7: Rodapé / Status do Projeto */
+
+.rodape {
+    background-color: var(--cor-pastel-lilas);
+    color: var(--cor-texto);
+    border: 1px solid #ddd6fe;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    margin-top: 1.5rem;
+    border-radius: 12px;
+}
+
+.rodape h2 {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin: 0 0 0.25rem 0;
+    font-size: 1.2rem;
+}
+
+.rodape p {
+    margin: 0;
+    color: var(--cor-texto-suave);
+}
+
+
+/* ETAPA 8: Responsividade e Comportamento por Tela */
+
+/* Menu lateral fixo ao rolar em telas grandes */
+@media (min-width: 769px) {
+    .menu {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+    }
+}
+
+/* Layout empilhado para celulares e tablets */
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main";
+    }
+
+    .cabecalho {
+        padding: 1rem 1.25rem;
+    }
+
+    .menu {
+        border-right: none;
+        border-bottom: 1px solid var(--cor-borda);
+        padding: 1.25rem;
+    }
+
+    .conteudo {
+        padding: 1.25rem;
+    }
+}

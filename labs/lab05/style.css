@@ -1,15 +1,13 @@
-/* ETAPA 1: Variáveis, Herança e Seletores */
-
 :root {
-    --cor-primaria: #7c3aed;      /* Lilás vibrante (botões, links ativos e destaques) */
-    --cor-secundaria: #38bdf8;    /* Azul bebê vivo (detalhes e bordas ativas) */
-    --cor-fundo: #f4f7fb;         /* Azul bebê bem clarinho / gelo para o fundo geral */
-    --cor-superficie: #ffffff;    /* Branco puro para os cards e menu */
-    --cor-texto: #2e1065;         /* Roxo/Lilás escuro para leitura confortável */
-    --cor-texto-suave: #64748b;   /* Cinza azulado para subtítulos e detalhes */
-    --cor-borda: #e2e8f0;         /* Borda discreta */
-    --cor-hover-azul: #e0f2fe;    /* Azul bebê suave para efeito hover */
-    --cor-pastel-lilas: #ede9fe;  /* Lilás pastel para rodapé e degradês */
+    --cor-primaria: #7c3aed;      
+    --cor-secundaria: #38bdf8;   
+    --cor-fundo: #f4f7fb;       
+    --cor-superficie: #ffffff;  
+    --cor-texto: #2e1065;        
+    --cor-texto-suave: #64748b;   
+    --cor-borda: #e2e8f0;         
+    --cor-hover-azul: #e0f2fe;    
+    --cor-pastel-lilas: #ede9fe; 
 }
 
 *,
@@ -25,7 +23,6 @@ body {
     line-height: 1.6;
     margin: 0;
 
-    /* Layout principal com Grid */
     display: grid;
     min-height: 100vh;
     grid-template-columns: 280px 1fr;
@@ -35,21 +32,15 @@ body {
         "nav main";
 }
 
-/* Tipografia dos títulos */
 
 h1, h2, h3 {
     font-family: "Black Ops One", system-ui;
     letter-spacing: 0.5px;
 }
 
-/* Oculta as linhas horizontais */
-
 hr {
     display: none;
 }
-
-
-/* ETAPA 2: Organização das áreas do Grid */
 
 .cabecalho {
     grid-area: header;
@@ -69,12 +60,9 @@ hr {
 .conteudo {
     grid-area: main;
     padding: 2rem;
-    max-width: 1100px; /* Evita que o texto estique demais em telas ultrawide */
+    max-width: 1100px; 
     width: 100%;
 }
-
-
-/* ETAPA 3: Ajustes do cabeçalho */
 
 .cabecalho h1 {
     margin: 0 0 0.25rem 0;
@@ -84,9 +72,6 @@ hr {
     margin: 0;
     color: var(--cor-texto-suave);
 }
-
-
-/* ETAPA 4: Menu e links */
 
 .menu a {
     display: block;
@@ -102,8 +87,6 @@ hr {
     color: var(--cor-primaria);
     transform: translateX(4px);
 }
-
-/* Destaque do item Início (funciona tanto se a classe estiver no <li> quanto no <a>) */
 
 .inicio,
 .inicio a,
@@ -121,9 +104,6 @@ a.inicio:hover {
     transform: none;
 }
 
-
-/* ETAPA 5: Listas aninhadas */
-
 .menu ul,
 .menu ol {
     padding-left: 1.25rem;
@@ -133,19 +113,13 @@ a.inicio:hover {
     margin-bottom: 0.4rem;
 }
 
-/* Registros de sala de aula */
-
 .registros {
     list-style-type: circle;
 }
 
-/* Laboratórios */
-
 .laboratorios {
     list-style-type: square;
 }
-
-/* Espaçamento dos títulos dos módulos */
 
 .menu h3,
 .menu ol h3 {
@@ -154,9 +128,6 @@ a.inicio:hover {
     font-size: 1rem;
     color: var(--cor-primaria);
 }
-
-
-/* ETAPA 6: Conteúdo principal e cards */
 
 .card {
     background-color: var(--cor-superficie);
@@ -180,9 +151,6 @@ a.inicio:hover {
     margin-bottom: 1rem;
 }
 
-
-/* ETAPA 7: Rodapé / Status do Projeto */
-
 .rodape {
     background-color: var(--cor-pastel-lilas);
     color: var(--cor-texto);
@@ -205,10 +173,6 @@ a.inicio:hover {
     color: var(--cor-texto-suave);
 }
 
-
-/* ETAPA 8: Responsividade e Comportamento por Tela */
-
-/* Menu lateral fixo ao rolar em telas grandes */
 @media (min-width: 769px) {
     .menu {
         position: sticky;
@@ -218,7 +182,6 @@ a.inicio:hover {
     }
 }
 
-/* Layout empilhado para celulares e tablets */
 @media (max-width: 768px) {
     body {
         grid-template-columns: 1fr;
